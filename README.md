@@ -1,5 +1,5 @@
 # RF_Scanner
-A Gimbaled 2.4 GHz Signal Strength Detector, Tracker, and IMU-Assisted Mapper
+A Gimbaled 2.4 GHz Signal Strength Detector, Tracker, and IMU-Assisted Mapper.
 
 # Coming Soon....
 
