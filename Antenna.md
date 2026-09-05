@@ -45,7 +45,7 @@ Several challenges I had:
 The purpose of the balun is to convert the single-ended, unbalanced 50 ohm coplanar waveguide / ground plane side to a differential "matched" dipole driven element on the other side.
 The dimensions of this balun would have to be experimented with in Ansys. The reason being, TI used a dielectric (FR4) thickness of .226mm between the top and bottom copper layers. I ended up deviating from the typical 1.6mm PCB thickness to just 0.8 mm and thus around a ~.751mm FR4 thickness.
 
-A
+I ended up going with similar vertical dimensions to TI's balun, but achieved the best S11 results by using distance-from-centerline dimensions roughly double that of TI's, due to the changes in FR4 thickness.
 
 <img width="1418" height="678" alt="image" src="https://github.com/user-attachments/assets/f194ca55-227a-4e45-b36b-942438d5e93e" />
 
@@ -67,5 +67,82 @@ Simulation of altering one design parameter, such as dipole length. This is show
 <img width="942" height="447" alt="image" src="https://github.com/user-attachments/assets/0a2a5450-cf66-45f8-9e81-4c89c74d9a25" />
 
 Optimization in Ansys HFSS allows the machine to run many simulations (100 at a time in my case) by altering user-defined parameters such as dipole trace width, dipole to reflector spacing, spacing between the dipole and directors, individual director lengths and spacing, etc. You set design priorities with different weights.
+
+## Trends / Observations
+
+I noticed that often times, my three big design parameters would often be a tradeoff. When I was able to increase the gain, the front to back ratio would worsen. When I shortened the spacing between the dipole and first director, I would greatly improve front to back ratio (and often the case for other directors as well, but not at all universally), but the S11 parameters would worsen. Shortening the spacing between the dipole and reflector would usually strengthen the sidelobes (figure below) radiating from the board in perpendicular direction.
+
+<img width="1427" height="721" alt="Screenshot 2026-09-03 202805" src="https://github.com/user-attachments/assets/7e59fdb7-690e-46be-9d1c-71131f9d40b2" />
+
+Realized gain polar plot with visible side lobes in the +/- Z direction (perpendicular to the board face).
+
+
+I tried fixed director length and spacing, and experimented with many different spacings, but by a noticeable margin I achieved the best results with some variance in all the parameters to a degree. I also tried using vias to connect the directors to the top and bottom. Of course I didn't try every permutation of every variable, but in general, doing this slightly worsened the gain and S11.
+
+In trying to maximize my gain and keep my board length limited, I tried using more directors, but four seemed to be the sweet spot. I found I achieved the best results by allowing a minimum of at least 7mm of clearance from the directors to the edge of the board. 
+
+
+
+## Final Design
+
+<img width="1206" height="613" alt="image" src="https://github.com/user-attachments/assets/7ff4ea7b-9be7-4f5f-bac9-a4065a4efcdf" />
+
+Final design (in HFSS) with variable director spacing and director lengths. I included a 10um thickness of solder mask. Omitted were the mounting holes and notches, for simulation / mesh purposes, which likely had a negligible effect.
+
+
+<img width="1407" height="736" alt="Screenshot 2026-09-03 202727" src="https://github.com/user-attachments/assets/4ae37d8f-bf5e-406a-98dc-2b50b519c222" />
+
+Realized gain plot.
+
+<img width="1425" height="727" alt="Screenshot 2026-09-03 202734" src="https://github.com/user-attachments/assets/a55b29f6-7c91-46aa-9c6c-68665eff8fc1" />
+
+Front to back ratio (dB10)
+
+
+<img width="1422" height="735" alt="Screenshot 2026-09-05 085025" src="https://github.com/user-attachments/assets/5ed36e04-641c-4a6e-a3da-bdfa416bb9c5" />
+
+<img width="1426" height="737" alt="Screenshot 2026-09-03 202718" src="https://github.com/user-attachments/assets/a1c64e63-9a81-42bd-98b5-b316b36fc3bc" />
+
+Top: S11 return loss (dB).  Bottom: Voltage Standing Wave Ratio (VSWR) and bandwidth below 1.5.
+
+<img width="1425" height="733" alt="Screenshot 2026-09-03 202813" src="https://github.com/user-attachments/assets/62150697-dc1d-4ace-b74e-cfdd24c94eaa" />
+
+S11 Z-Parameter (linear Smith chart) with R + jX values.
+
+<img width="1617" height="932" alt="Screenshot 2026-08-11 191303" src="https://github.com/user-attachments/assets/d8736ee2-3c4e-42ed-a956-f2ae641bdf0b" />
+
+<img width="1818" height="996" alt="Screenshot 2026-08-10 191219" src="https://github.com/user-attachments/assets/c71bd72b-ace7-4fe2-af19-1b286b99cfdc" />
+
+KiCAD Implemtation
+
+
+
+## Final Result & Measurements
+
+
+<img width="504" height="376" alt="IMG_8527" src="https://github.com/user-attachments/assets/0a08522a-40ef-42b7-ba8e-283ade51e462" />
+
+Assembled Board (little charred from a hot plate :) )
+
+Lite VNA Measurements:
+
+<img width="480" height="320" alt="RL3" src="https://github.com/user-attachments/assets/22910bf1-793b-4d81-a41f-cf266a14c5fe" />
+
+Return Loss 
+
+<img width="480" height="320" alt="SM1" src="https://github.com/user-attachments/assets/20317775-31d4-4e1a-9c57-06acef0af61e" />
+
+Smith Chart
+
+<img width="480" height="320" alt="REIMG" src="https://github.com/user-attachments/assets/f9175dd8-b226-4f7b-b133-6f35bdb92d47" />
+
+Real + imaginary S11 (2.4 - 2.5 GHz)
+
+
+
+
+
+
+
 
 
