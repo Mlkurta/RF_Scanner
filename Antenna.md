@@ -1,5 +1,5 @@
 
-# 2.4 GHz Antenna
+# 2.4 GHz PCB Yagi-Uda Antenna
 
 I started out with a goal of making a not-too-large directional antenna that could be used for a portable RF scanner.  Since 2.4 GHz is so common - there are many RF sources, low-cost tools, easy to experiment with legally, etc. it seemed like a good choice. In addition, the wavelength didn't require the PCB (antenna) size to be prohibitively large.
 
