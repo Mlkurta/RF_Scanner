@@ -1,7 +1,7 @@
 
 # 2.4 GHz Antenna
 
-I started out with a goal of making a not-too-large directional antenna that could be used for a portable RF scanner.  Since 2.4 GHz is so common - there are many RF sources, low-cost tools, etc. it seemed like a good choice. In addition, the wavelength didn't require the PCB (antenna) size to be prohibitively large.
+I started out with a goal of making a not-too-large directional antenna that could be used for a portable RF scanner.  Since 2.4 GHz is so common - there are many RF sources, low-cost tools, easy to experiment with legally, etc. it seemed like a good choice. In addition, the wavelength didn't require the PCB (antenna) size to be prohibitively large.
 
 A yagi-uda design was attractive to me, since there's tons of documentation available about design techniques. I particularly liked (Youtube) IMSAIGuy's videos about PCB yagis and how he went about designing his own....even if his wasn't a "traditional" PCB.
 
@@ -137,6 +137,11 @@ Smith Chart
 <img width="480" height="320" alt="REIMG" src="https://github.com/user-attachments/assets/f9175dd8-b226-4f7b-b133-6f35bdb92d47" />
 
 Real + imaginary S11 (2.4 - 2.5 GHz)
+
+<img width="480" height="320" alt="SWR" src="https://github.com/user-attachments/assets/8ab372c7-75c6-43ca-8ebe-6c8353017570" />
+
+VSWR
+
 
 
 
