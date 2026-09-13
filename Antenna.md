@@ -66,7 +66,9 @@ Simulation of altering one design parameter, such as dipole length. This is show
 
 <img width="942" height="447" alt="image" src="https://github.com/user-attachments/assets/0a2a5450-cf66-45f8-9e81-4c89c74d9a25" />
 
-Optimization in Ansys HFSS allows the machine to run many simulations (100 at a time in my case) by altering user-defined parameters such as dipole trace width, dipole to reflector spacing, spacing between the dipole and directors, individual director lengths and spacing, etc. You set design priorities with different weights.
+Parametric optimization in Ansys HFSS allows the machine to run many simulations (100 at a time in my case) by altering user-defined parameters such as dipole trace width, dipole to reflector spacing, spacing between the dipole and directors, individual director lengths and spacing, etc. You set design priorities with different weights.
+
+I ran the optimizer probably five times, with 100 iterations each.
 
 ## Trends / Observations
 
@@ -117,7 +119,7 @@ KiCAD Implemtation
 
 
 
-## Final Result & Measurements
+## Results & Measurements
 
 
 <img width="504" height="376" alt="IMG_8527" src="https://github.com/user-attachments/assets/0a08522a-40ef-42b7-ba8e-283ade51e462" />
@@ -142,7 +144,27 @@ Real + imaginary S11 (2.4 - 2.5 GHz)
 
 VSWR
 
+## Antenna Radiation Test
 
+Espressif has this neat little tool called EspRFTestTool.  You can turn any ESP32 into an RF test device:
+
+<img width="717" height="815" alt="image" src="https://github.com/user-attachments/assets/5d8f41a5-d75e-41a6-b159-8c3f567f0177" />
+
+You can send packets over different wifi, Bluetooth, or BLE packets. You can choose your transmit channel, data rate, and tx power. Or you can do what I did and just send a continuous tone. You cannot send a continuous tone over a full 20 MHz bandwidth as the GUI looks like. The tone is more of a ~20 KHz wide spike.
+
+To complete the test; I didnt do any anechoic chamber or open space. Rather, I turned off all Wifi and bluetooth devices I could find in the house and put my hackrf and antenna on a tripod. I placed the ESP32 on the edge of a table 4 meters away. The ESP32 layed flat, as well as its built in inverted F antenna, which was horizontally polarized. I tested the Yagi in both vertical (cross polarized) and horizontal orientations. SNR values were recorded every 15 degrees, and the totals normalized at the end:
+
+<img width="585" height="410" alt="Yagi_2_4_plot" src="https://github.com/user-attachments/assets/46273915-e22f-4d78-befb-d6ab11828873" />
+
+Plotted and normalized (not calibrated) radiation patterns from MATLAB.
+
+<img width="790" height= "439" alt="Gain2dAzimuth" src="https://github.com/user-attachments/assets/08cd6a78-822d-4344-8b44-f0755e07943c" />
+
+Predicted Ansys radiation (Horizontal), albeit realized gain plot.
+
+<img width="744" height="770" alt="Screenshot 2026-09-12 205514" src="https://github.com/user-attachments/assets/92357965-3a91-4659-b385-564ae71c19c8" />
+
+HackRF One + SDR Angel as a rudimentary spectrum analyzer.
 
 
 
