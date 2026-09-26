@@ -111,6 +111,10 @@ Top: S11 return loss (dB).  Bottom: Voltage Standing Wave Ratio (VSWR) and bandw
 
 S11 Z-Parameter (linear Smith chart) with R + jX values.
 
+<img width="513" height="294" alt="image" src="https://github.com/user-attachments/assets/7a8f741d-d42a-4ade-85ab-fc2aeb25820f" />
+
+Balun bridging ground plane to ground dipole feed.
+
 <img width="1617" height="932" alt="Screenshot 2026-08-11 191303" src="https://github.com/user-attachments/assets/d8736ee2-3c4e-42ed-a956-f2ae641bdf0b" />
 
 <img width="1818" height="996" alt="Screenshot 2026-08-10 191219" src="https://github.com/user-attachments/assets/c71bd72b-ace7-4fe2-af19-1b286b99cfdc" />
@@ -122,9 +126,9 @@ KiCAD Implemtation
 ## Results & Measurements
 
 
-<img width="504" height="376" alt="IMG_8527" src="https://github.com/user-attachments/assets/0a08522a-40ef-42b7-ba8e-283ade51e462" />
+<img width="504" height="376" alt="Assembled" src="https://github.com/user-attachments/assets/7fd1fc46-da76-4ec8-b5d1-fc4a5365935d" />
 
-Assembled Board (little charred from a hot plate :) )
+Assembled Board
 
 Lite VNA Measurements:
 
