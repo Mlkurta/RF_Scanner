@@ -163,7 +163,7 @@ To complete the test; I didnt do any anechoic chamber or open space. Rather, I t
 
 <img width="585" height="410" alt="Yagi_2_4_plot" src="https://github.com/user-attachments/assets/46273915-e22f-4d78-befb-d6ab11828873" />
 
-Plotted and normalized (not calibrated) radiation patterns from MATLAB.
+MATLAB plotted and normalized (not calibrated) radiation patterns from test results.
 
 <img width="790" height= "439" alt="Gain2dAzimuth" src="https://github.com/user-attachments/assets/08cd6a78-822d-4344-8b44-f0755e07943c" />
 
