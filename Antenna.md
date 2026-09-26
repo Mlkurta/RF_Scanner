@@ -51,10 +51,13 @@ I ended up going with similar vertical dimensions to TI's balun, but achieved th
 
 Source: R. Wallace & S. Dunbar of Texas Instruments, Application note DN034, "2.4 GHz PCB yagi antenna".
 
+<img width="629" height="279" alt="Screenshot 2026-09-26 120147" src="https://github.com/user-attachments/assets/8b65ca46-1ee1-42c4-8765-3f163696f7d6" />
+
+In order to create a controlled impedance trace, I used a CoPlanar Wave Guide (CPWG) with ground. There's a calculator built into KiCad where you can enter your board stackup and substrate parameters in order to give a trace width and spacing to the ground planes.
 
 <img width="1028" height="337" alt="Screenshot 2026-08-01 111844" src="https://github.com/user-attachments/assets/cb050696-be59-422f-9bd5-7b421772d0c7" />
 
-50 ohm CoPlanar Wave Guide (CPWG) with ground, with reduced / rectangular vias and SMA end-launch taper, modeled in Ansys.
+50 ohm CPWG, with reduced / rectangular vias and SMA end-launch taper, modeled in Ansys.
 
 <img width="2185" height="1002" alt="image" src="https://github.com/user-attachments/assets/cb36b0d0-bc71-4d2e-84af-e8b269cd82c7" />
 
